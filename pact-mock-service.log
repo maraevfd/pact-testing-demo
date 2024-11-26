@@ -1,0 +1,23 @@
+I, [2024-11-26T17:06:41.883259 #10690]  INFO -- : Cleared interactions
+I, [2024-11-26T17:06:41.887862 #10690]  INFO -- : Registered expected interaction GET /books
+D, [2024-11-26T17:06:41.888055 #10690] DEBUG -- : {
+  "description": "Request for all books",
+  "providerState": "Books 1, 2 exist",
+  "request": {
+    "method": "get",
+    "path": "/books"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": [
+      {
+        "id": 1,
+        "author": "George Orwell",
+        "title": "1984"
+      }
+    ]
+  },
+  "metadata": null
+}

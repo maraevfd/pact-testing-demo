@@ -20,5 +20,16 @@ def add_book():
     books.append(new_book)
     return jsonify(new_book), 201
 
+@app.route('/books/<int:book_id>', methods=['DELETE'])
+def delete_book(book_id):
+    global books #just for mock usage
+    book_to_delete = next((book for book in books if book["id"] == book_id), None)
+
+    if book_to_delete is None:
+        return jsonify({"error": "Book not found"}), 404
+
+    books = [book for book in books if book["id"] != book_id]
+    return jsonify({"message": f"Book with ID {book_id} has been deleted"}), 204
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
