@@ -1,7 +1,7 @@
 import requests
 
 
-class BookUser:
+class BookClient:
     BOOKS = '/books'
 
     def __init__(self, base_url: str = 'http://127.0.0.1:5000'):
